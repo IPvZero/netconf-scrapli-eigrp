@@ -1,0 +1,13 @@
+---
+
+eigrp:
+  name: "IPvZero"
+  as: "12"
+  rid: 1.1.1.1
+  networks:
+    - number: 10.0.0.0
+      wildcard: 0.0.0.3
+    - number: 1.1.1.1
+      wildcard: 0.0.0.0
+    - number: 172.16.1.0
+      wildcard: 0.0.0.255
