@@ -1,7 +1,7 @@
 """
 AUTHOR: IPvZero
 Date: 25th Oct 2020
-Purpose: This script references my Youtube video on Desired State
+Purpose: This script is used in my Youtube video: https://www.youtube.com/watch?v=o8dYsYtSCpc
 """
 
 from nornir import InitNornir
