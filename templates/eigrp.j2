@@ -1,0 +1,28 @@
+<config>
+        <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+                <router operation="replace">
+                        <eigrp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-eigrp">
+                        <id>{{ host.facts.eigrp.name }}</id>
+                                <address-family>
+                                        <type>ipv4</type>
+                                        <af-ip-list>
+                                                <unicast-multicast>unicast</unicast-multicast>
+                                                <autonomous-system>{{ host.facts.eigrp.as }}</autonomous-system>
+                                                <eigrp>
+                                                <router-id>{{ host.facts.eigrp.rid }}</router-id>
+                                                </eigrp>
+                                                {% for n in host.facts.eigrp.networks %}
+                                                <network>
+                                                        <number>{{ n.number }}</number>
+                                                        <wild-card>{{ n.wildcard }}</wild-card>
+                                                </network>
+                                                {% endfor %}
+                                                <topology>
+                                                        <base/>
+                                                </topology>
+                                        </af-ip-list>
+                                </address-family>
+                        </eigrp>
+                </router>
+        </native>
+</config>
