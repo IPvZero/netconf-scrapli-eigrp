@@ -15,7 +15,7 @@ nr = InitNornir(config_file="config.yaml")
 
 def load_vars(task):
     """
-    Load host variables and bind them to a per-host dict key "facts"
+    Load host variables and bind them to a per-host dict key called "facts"
     """
 
     data = task.run(task=load_yaml, file=f"./host_vars/{task.host}.yaml")
